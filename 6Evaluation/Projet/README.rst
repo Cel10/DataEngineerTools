@@ -7,7 +7,7 @@ Ce projet consiste à récolter les données concernant les films les plus popul
 Lancement du projet
 -------------------
 
-Cloner la base du projet : 
+Cloner la base du projet : https://github.com/Cel10/DataEngineerTools.git
 
 Mettez-vous dans le dossier contenant cette base de projet puis lancer cette commande dans un terminal/prompt :   
 
@@ -15,9 +15,13 @@ Mettez-vous dans le dossier contenant cette base de projet puis lancer cette com
 
   > docker-compose up -d
 
-Ensuite, mettez-vous dans le dossier contenant l’application Flask puis lancer la :   
+Ensuite, mettez-vous dans le dossier contenant l’application Flask (/myApp) puis lancer la avec la commande :   
 
-Ainsi, l’application web sera accessible sur votre localhost du port 5000.  
+.. code-block:: bash
+
+  > python run.py
+
+Ainsi, l’application web sera accessible sur votre localhost du port 5000 : http://localhost:5000/.  
 
 Scrapy 
 ---------
@@ -46,8 +50,8 @@ Les items générés au sein d'un projet Scrapy passent par les Pipelines, qui p
 
 J'ai défini deux pipelines : 
 
-- test : permet d’uniformiser le texte
--	test : permet de stocker dans MongoDB
+- ImdbcrawlerPipeline : permet d’uniformiser le texte
+-	MongoPipeline : permet de stocker dans MongoDB
 
 Plus précisément, la première permet de supprimer le contenu HTML, de valider les données scrapées et de supprimer tous les éléments qui ne nous intéressent pas. 
 Puis, la deuxième permet de stocker les items dans des documents mongo.
@@ -82,4 +86,5 @@ Il a également été utile pour virtualiser des serveurs MongoDB ainsi que Elas
 Mise à jour de la base de données
 ---------------------------------
 Afin de mettre à jour la base de données, il suffit d'ouvrir le fichier ``scrapy_run.ipynb`` et de lancer la dernière commande.
+Puis de relancer le projet à la première étape.
 
