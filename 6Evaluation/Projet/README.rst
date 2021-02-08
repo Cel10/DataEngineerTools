@@ -23,6 +23,16 @@ Ensuite, mettez-vous dans le dossier contenant l’application Flask (/myApp) pu
 
 Ainsi, l’application web sera accessible sur votre localhost du port 5000 : http://localhost:5000/.  
 
+Voici un aperçu de la page d'accueil :
+
+.. image:: ./images/accueil.JPG
+   :width: 100
+   
+Voici un aperçu d'une page de recherche :
+
+.. image:: ./images/recherche.JPG
+   :width: 100
+
 Scrapy 
 ---------
 Scrapy est un Framework permettant de crawler des sites web et d'en extraire les données de façon structurée.
@@ -88,3 +98,7 @@ Mise à jour de la base de données
 Afin de mettre à jour la base de données, il suffit d'ouvrir le fichier ``scrapy_run.ipynb`` et de lancer la dernière commande.
 Puis de relancer le projet à la première étape.
 
+
+Amélioration
+------------
+Pour une meilleure optimisation, il faudrait automatisé la mise à jour de la base de données en créant une classe qui lance le Scraping lors du lancement de l'application.
