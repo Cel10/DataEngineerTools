@@ -2,7 +2,9 @@
 Documentation technique
 ========================
 
-Ce projet consiste à récolter les données concernant les films les plus populaires d’un classement créé par IMDb dans le but de les stocker et les afficher dans une application web avec le Framework Flask. J’ai alors utilisé Elasticsearch pour répondre au moteur de recherche et de suggestion sur le site. Enfin, Docker a également permis de virtualiser un serveur de base de données et un Elasticsearch.
+Ce projet consiste à récolter les données concernant les films les plus populaires d’un classement créé par IMDb dans le but de les stocker et les afficher dans une application web avec le Framework Flask. J’ai alors utilisé Elasticsearch pour répondre au moteur de recherche et de suggestion sur le site. Enfin, Docker m'a permis de virtualiser un serveur de base de données et un Elasticsearch.
+
+site : https://www.imdb.com/search/title/?groups=top_1000&ref_=adv_prv
 
 Lancement du projet
 -------------------
@@ -17,13 +19,15 @@ Mettez-vous dans le dossier contenant cette base de projet puis lancer cette com
 
 Ensuite, mettez-vous dans le dossier contenant l’application Flask (/myApp) puis lancer la avec la commande :   
 
-.. code-block:: bash
 Windows
+
+.. code-block:: bash
 
   > python run.py
    
+Linux    
+
 .. code-block:: bash
-Linux 
 
   > python3 run.py
 
