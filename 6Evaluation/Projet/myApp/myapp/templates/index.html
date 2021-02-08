@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+		
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+
+        <title>Data Engineering DSIA 4201C</title>
+        
+ 
+
+    </head>
+
+    
+    <body>
+
+        <div id="bloc_page">
+
+            <header>
+
+                <div id="titre_principal">
+
+                    <div id="logo">
+
+                        <img src="{{ url_for('static',filename='images/imdb_logo1.jpg') }}" alt="Logo de Imdb" />
+
+                        <h1>Imdb</h1>    
+
+                    </div>
+
+                    <h2>Data Engineering DSIA-4201C</h2>
+
+                </div>
+
+                
+
+                <nav>
+
+                    <ul>
+
+                        <li><a href="/index">Accueil</a></li>
+
+                        <li><a href="/acteur">Personnalité</a></li>
+
+                        <li><a href="/film">Titre</a></li>
+						
+						<li><a href="/categorie">Catégorie</a></li>
+
+
+                    </ul>
+
+                </nav>
+
+            </header>
+            
+
+            <section>
+
+                <article>
+
+                    <h1><img src="{{ url_for('static',filename='images/ico_movie.png') }}" alt="Icone film" class="ico_movie" />Les films les plus populaires</h1>
+
+                    <p>Ce site web regroupe les données scrappées des films les plus populaires d'après le classement de IMDb. Vous pouvez retrouver le classement sur ce <a href="https://www.imdb.com/search/title/?groups=top_1000">lien</a>.</p>
+
+                    <p>Vous pouvez chercher un film par nom d'acteur, ou d'après le nom d'un personnage ou encore via le nom d'un réalisateur mais également en mettant son titre. Vous obtiendrez alors toutes les informations principales concernant les films recherchés. La section Catégorie permet également d'afficher les meilleurs films par catégorie. Ces recherches vous permettront de savoir si un acteur particulier a joué dans un film à succès ou encore de savoir si un de vos films préférés fait partie des tendances.</p>
+
+					<p>Par exemple : 
+						<br><span STYLE="padding:0 0 0 20px;">- Nom d'acteur : Chris Hemsworth</span>
+						<br><span STYLE="padding:0 0 0 20px;">- Titre de film : Soul</span>
+					
+					<p>IMDb est une base de données américaine, c'est pourquoi toutes les recherches doivent être en anglais et les résultats le seront également.</p>
+					
+                </article>
+
+                <aside>
+
+                    <h1>TOP 5 des films</h1>
+					
+					<div id="top">
+					
+						{% for i in range(top|length) %}
+								
+							<p>{{i+1}}. {{top[i]}}</p>
+							
+						{% endfor %}
+						
+					</div>
+					
+					<p id="date"><span STYLE="padding:0 0 0 115px;">{{day}} {{month}} {{year}}</span></p>
+					
+                </aside>
+
+            </section>
+
+            
+
+            <footer>
+
+                <div id="auteur">
+
+                    <h1>Céline SISAVANH</h1>
+
+                    <p>celinesisavanh@gmail.com</p>
+
+                    <p>Site web créé le 7 Février 2021</p>
+
+                </div>
+
+                <div id="mes_reseaux">
+
+                    <h1>Mes réseaux</h1>
+					
+					<p><a  href="https://www.linkedin.com/in/c%C3%A9line-sisavanh/"><img src="{{ url_for('static',filename='images/linkedin.jpg') }}" alt="LinkedIn" /></a><a href="https://github.com/Cel10"><img src="{{ url_for('static',filename='images/github.png') }}" alt="Github" /></a><a href="https://git.esiee.fr/sisavanc"><img src="{{ url_for('static',filename='images/gitlab.png') }}" alt="Gitlab" /></a></p>
+                    
+                </div>
+				
+				<div id="school">
+					
+					<p><a href = "https://www.esiee.fr/"><img src="{{ url_for('static',filename='images/esiee.png') }}" alt="ESIEE" /></a></p>
+					
+					<p><a href = "https://www.univ-gustave-eiffel.fr/"><img src="{{ url_for('static',filename='images/eiffel.png') }}" alt="Gustave Eiffel" /></a></p>
+					
+				</div>
+
+
+            </footer>
+
+        </div>
+
+    </body>
+
+</html>
+
+

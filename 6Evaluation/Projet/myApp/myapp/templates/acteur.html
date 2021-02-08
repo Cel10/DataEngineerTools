@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+
+        <title>Data Engineering - Recherche par nom</title>
+        
+
+    </head>
+	
+	<body>
+		
+		<div id="bloc_page">
+
+            <header>
+
+                <div id="titre_principal">
+
+					<div id="logo">
+
+                        <img src="{{ url_for('static',filename='images/imdb_logo1.jpg') }}" alt="Logo de Imdb" />
+
+                        <h1>Imdb</h1>    
+
+                    </div>
+
+                    <h2>Data Engineering DSIA-4201C</h2>
+
+                </div>
+
+                
+
+                <nav>
+
+                    <ul>
+
+                        <li><a href="/index">Accueil</a></li>
+
+                        <li><a href="/acteur">Personnalité</a></li>
+
+                        <li><a href="/film">Titre</a></li>
+						
+						<li><a href="/categorie">Catégorie</a></li>
+
+
+                    </ul>
+
+                </nav>
+
+            </header>
+			
+			
+			<recherche>
+			
+				<test>
+				
+					<div id="search">
+					
+						<h1><img src="{{ url_for('static',filename='images/personne.png') }}" alt="" class="ico_actor" /> Recherche par nom</h1>
+						
+						<div id="search_name">
+			
+							<div id="nom_acteur">
+							
+								<span STYLE="padding:0 0 0 10px;">Nom d'acteur</span>
+								
+								<form action="{{ url_for('acteur') }}" method="post">
+									<br><input type="text" placeholder="Nom d'un acteur" name="nom_acteur" />
+									<input type="submit" value="Entrer" />
+								</form>
+								
+							</div>
+							
+							<div id="nom_realisateur">
+								
+								<span STYLE="padding:0 0 0 10px;">Nom de réalisateur</span>
+		
+								<form action="{{ url_for('acteur') }}" method="post">
+									<br><input type="text" placeholder="Nom d'un réalisateur" name="nom_real" />
+									<input type="submit" value="Entrer" />
+								</form>
+							
+							</div>
+							
+							<div id="nom_personnage">
+								
+								<span STYLE="padding:0 0 0 10px;">Nom d'un personnage</span>
+								
+								<form action="{{ url_for('acteur') }}" method="post">
+									<br><input type="text" placeholder="Nom d'un personnage" name="nom_perso" />
+									<input type="submit" value="Entrer" />
+								</form>
+							
+							</div>
+							
+						</div>
+						
+						<br><h2>{{h2}}</h2>
+						
+							{% for i in range(nom|length) %}
+								<ul id="list_film">
+									
+									<li style="width:800px">
+										
+										<div id="film_details">
+										
+											<div id="img_film">
+												
+												<img src={{image[i]}} height="auto" width="65%" alt="Affiche du film" class="affiche_film" />
+												
+											</div>
+											
+											<div id="fiche_film">
+												
+												<b><i>{{nom[i]}}</i></b> - {{note[i]}}/10 <br> {{synopsis[i]}}
+											
+											</div>
+											
+										</div>
+										
+									</li> 
+									
+								</ul>
+							{% endfor %}
+					
+					</div>
+					
+				</test>
+			
+			</recherche>
+			
+			
+			<footer>
+
+                <div id="auteur">
+
+                    <h1>Céline SISAVANH</h1>
+
+                    <p>celinesisavanh@gmail.com</p>
+
+                    <p>Site web créé le 7 Février 2021</p>
+
+                </div>
+
+                <div id="mes_reseaux">
+
+                    <h1>Mes réseaux</h1>
+					
+					<p><a  href="https://www.linkedin.com/in/c%C3%A9line-sisavanh/"><img src="{{ url_for('static',filename='images/linkedin.jpg') }}" alt="LinkedIn" /></a><a href="https://github.com/Cel10"><img src="{{ url_for('static',filename='images/github.png') }}" alt="Github" /></a><a href="https://git.esiee.fr/sisavanc"><img src="{{ url_for('static',filename='images/gitlab.png') }}" alt="Gitlab" /></a></p>
+                    
+                </div>
+				
+				<div id="school">
+					
+					<p><a href = "https://www.esiee.fr/"><img src="{{ url_for('static',filename='images/esiee.png') }}" alt="ESIEE" /></a></p>
+					
+					<p><a href = "https://www.univ-gustave-eiffel.fr/"><img src="{{ url_for('static',filename='images/eiffel.png') }}" alt="Gustave Eiffel" /></a></p>
+					
+				</div>
+
+
+            </footer>
+			
+		</div>
+	
+	</body>
