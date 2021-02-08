@@ -18,14 +18,20 @@ Mettez-vous dans le dossier contenant cette base de projet puis lancer cette com
 Ensuite, mettez-vous dans le dossier contenant l’application Flask (/myApp) puis lancer la avec la commande :   
 
 .. code-block:: bash
+Windows
 
   > python run.py
+   
+.. code-block:: bash
+Linux 
+
+  > python3 run.py
 
 Ainsi, l’application web sera accessible sur votre localhost du port 5000 : http://localhost:5000/.  
 
 Voici un aperçu de la page d'accueil :
 
-.. image:: ./images/accueil.JPG
+.. image:: ./images/accueil2.JPG
    :width: 100
    
 Voici un aperçu d'une page de recherche :
